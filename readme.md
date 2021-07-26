@@ -7,7 +7,7 @@ Router list :
 * [POST] http://127.0.0.1:5000/login
 * [POST] http://127.0.0.1:5000/register
 * [GET] http://127.0.0.1:5000/sessions
-* [GET] http://127.0.0.1:5000/sessions/<id>
+* [GET] http://127.0.0.1:5000/sessions/{id}
 * [GET] http://127.0.0.1:5000/sessions/create
 * [GET] http://127.0.0.1:5000/sessions/update
 * [GET] http://127.0.0.1:5000/sessions/delete
