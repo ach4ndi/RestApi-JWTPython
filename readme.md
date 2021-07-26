@@ -10,7 +10,9 @@ Router list :
 * [GET] http://127.0.0.1:5000/sessions/{id}
 * [GET] http://127.0.0.1:5000/sessions/create
 * [GET] http://127.0.0.1:5000/sessions/update
+* [GET] http://127.0.0.1:5000/sessions/update/{id}
 * [GET] http://127.0.0.1:5000/sessions/delete
+* [GET] http://127.0.0.1:5000/sessions/delete/{id}
 
 attribute name for token on header : `x-access-token`
 
