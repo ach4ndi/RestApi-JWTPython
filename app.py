@@ -229,6 +229,7 @@ def get_session_update_index(current_user, token_ex, ssid):
     
     if session:
         session.duration = token_exp - datetime.utcnow().timestamp()
+        session.keyword = token
         db.session.commit()
         return jsonify({'message':'OK'})
     return jsonify({'message':'error'})
