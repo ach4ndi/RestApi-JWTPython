@@ -225,7 +225,7 @@ def get_session_update_index(current_user, token_ex, ssid):
     if 'x-access-token' in request.headers:
         token = request.headers['x-access-token']
     
-    session = Session.query.filter_by(keyword=token, user_id=current_user.id, id=ssid).first()
+    session = Session.query.filter_by(user_id=current_user.id, id=ssid).first()
     
     if session:
         session.duration = token_exp - datetime.utcnow().timestamp()
@@ -251,12 +251,7 @@ def get_session_delete(current_user, token_exp):
 @app.route('/sessions/delete/<ssid>', methods=['GET'])
 @token_required
 def get_session_delete_index(current_user, token_exp, ssid):
-    token = None
-    
-    if 'x-access-token' in request.headers:
-        token = request.headers['x-access-token']
-    
-    sessions = Session.query.filter_by(keyword=token, user_id=current_user.id, id=ssid).first()
+    sessions = Session.query.filter_by(user_id=current_user.id, id=ssid).first()
     
     if sessions:
         db.session.delete(sessions)
